@@ -1,33 +1,49 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function ImageSlider() {
   const images = [
-    require("../assets/makeUp.avif"),
-    require("../assets/perfum.jpg"),
+    require("../assets/Banner1.jpg"),
+    require("../assets/Banner2.jpg"),
+    require("../assets/Banner5.jpg"),
     require("../assets/perfum2.jpg"),
-    require("../assets/photo-1594035910387-fea47794261f.avif"),
-    require("../assets/photo-1619607146034-5a05296c8f9a.avif"),
   ];
 
   const [index, setIndex] = useState(0);
 
-  const prevSlide = () => setIndex((index - 1 + images.length) % images.length);
-  const nextSlide = () => setIndex((index + 1) % images.length);
+  // Auto Slide
+  useEffect(() => {
+    const slide = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(slide);
+  }, [images.length]);
+
+  const nextSlide = () =>
+    setIndex((prev) => (prev + 1) % images.length);
+
+  const prevSlide = () =>
+    setIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* IMAGE AS BACKGROUND */}
+    <div className="relative w-full h-[500px] overflow-hidden">
+
+      {/* SLIDER IMAGE */}
       <img
-        src={images[index].default || images[index]}
+        src={images[index]}
         alt="slide"
-        className="absolute w-full h-[500px] object-cover"
+        className="absolute w-full h-[500px] object-cover transition-all duration-700"
       />
+
+      {/* VERY LIGHT GRADIENT (NO DARKNESS) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
+
+     
 
       {/* LEFT BUTTON */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-10"
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-10 hover:bg-black/60"
       >
         <FaChevronLeft size={28} />
       </button>
@@ -35,13 +51,10 @@ function ImageSlider() {
       {/* RIGHT BUTTON */}
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-10"
+        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-10 hover:bg-black/60"
       >
         <FaChevronRight size={28} />
       </button>
-
-      {/* OPTIONAL: overlay to darken the background */}
-      <div className="absolute w-full h-full bg-black/20"></div>
     </div>
   );
 }

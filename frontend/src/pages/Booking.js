@@ -1,7 +1,15 @@
+import BookingForm from "../components/BookingForm";
+
+import bgImg from "../assets/image.png";
+
 function Booking() {
   return (
-    <div>
-      <h1>Book Event</h1>
+    // booking background image
+    <div
+      className="h-full w-full bg-cover bg-center "
+      style={{ backgroundImage: `url(${bgImg})` }}
+    >
+      <BookingForm />
     </div>
   );
 }

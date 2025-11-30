@@ -14,3 +14,21 @@ module.exports = {
   },
   plugins: [],
 };
+
+
+// extend: {
+//   animation: {
+//     slideSlow: "slide 25s linear infinite",
+//     slideReverse: "slideReverse 25s linear infinite",
+//   },
+//   keyframes: {
+//     slide: {
+//       "0%": { transform: "translateX(0)" },
+//       "100%": { transform: "translateX(-50%)" },
+//     },
+//     slideReverse: {
+//       "0%": { transform: "translateX(-50%)" },
+//       "100%": { transform: "translateX(0)" },
+//     },
+//   },
+// }

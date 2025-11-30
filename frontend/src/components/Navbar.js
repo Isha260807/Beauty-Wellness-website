@@ -3,7 +3,12 @@ import image from "../assets/210logo.png";
 
 function Navbar() {
   return (
-    <div className="bg-lime-100">
+    <div className="bg-gradient-to-b from-[#f5f0d8] to-[#e9e3c2]">
+      
+      {/* TOP NOTICE BAR */}
+      <div className="text-center text-sm font-semibold py-2 border-b border-gray-700">
+        Free shipping on all orders above AED 200, COD - AED 10 extra
+      </div>
       <nav className="relative p-10  shadow-md bg-black text-white flex        justify-between items-center">
         {/* Overlapping Image */}
         <img

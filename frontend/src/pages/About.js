@@ -1,6 +1,6 @@
 import React from "react";
-import aboutImage from "../assets/photo-1557170334-a9632e77c6e4.avif";
-import Image from "../assets/photo-1616427592814-195c30c24ea3.avif";
+import aboutImage from "../assets/photo-1594035910387-fea47794261f.avif";
+import Image from "../assets/photo-1619607146034-5a05296c8f9a.avif";
 
 function About() {
   return (
