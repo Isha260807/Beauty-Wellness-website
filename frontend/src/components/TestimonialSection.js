@@ -17,7 +17,7 @@ const reviews = [
     rating: 5,
   },
   {
-    name: "patel S",
+    name: "Ramu or seeta",
     course: "Dot Batch MERN Stack",
     review: "dg",
     rating: 5,

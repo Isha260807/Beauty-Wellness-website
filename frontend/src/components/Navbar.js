@@ -36,7 +36,7 @@ function Navbar() {
           </Link>
         </div>
 
-        {/* RIGHT: BUTTONS */}
+        {/* RIGHT: BUTTONS yes this is */}
         <div className="space-x-4">
           <Link
             to="/register"
